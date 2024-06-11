@@ -28,4 +28,9 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 最后将不同Prompt的结果保存。
 
-### 二、多次调用闭源API获取LLM给出的答案
+### 二、多次调用闭源API获取LLM给出的答案。
+
+#### 注意：由于是自费参赛且经费有限，对于部分的LLM/PROMPT只刷了test数据集的部分。
+
+1. 运行20240601_opus_1.ipynb，填入自己的API_KEY，结果保存到20240528_opus_res_parse_test.json
+2. 
