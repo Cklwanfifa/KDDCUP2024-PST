@@ -28,9 +28,9 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 最后将不同Prompt的结果保存。
 
-### 二、多次调用闭源API获取LLM给出的答案。
+### 二、多次调用闭源API获取LLM agent给出的答案。
 
-#### Notes：1. 由于是自费参赛且经费有限，对于部分的LLM的结果只刷了test数据集的部分。2.参赛过程比较仓促，导致这部分文件名的命名会比较随意。3. 我的Gemini Pro的API KEY很容易触发限额，因此代码实现上每调用一次需等待30s，并分成50个一组运行分批保存避免遇到错误。
+#### Notes：1. 由于是自费参赛且经费有限，对于部分的LLM的结果只刷了test数据集的部分。2.参赛过程比较仓促，导致这部分文件名的命名会比较随意。3. 我的Gemini Pro的API KEY很容易触发限额，因此代码实现上每调用一次需等待30s，并分成50个一组运行分批保存避免遇到错误。4. 原始提交数据依赖的LLM agent给出的答案已经附在目录中。
 
 ##### OPUS部分
 1. 运行20240601_opus_1.ipynb，填入自己的API_KEY，结果保存到opus_res_parse_test.json;
@@ -53,6 +53,8 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 ### 三、整合LLM模型结果
 由于很多情况下LLM输出的结果依然以文本形式存在，为了获得json格式的答案，我们还需要去解析并整合不同LLM模型的结果。
+
+#### Notes：1.原始提交数据依赖的LLM agent给出的答案已经附在目录中。
 
 运行parse_gpt_result.ipynb，在这个脚本中我们会
 
