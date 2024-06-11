@@ -5,7 +5,7 @@ The top3 solution of KDD CUP 2024 PST challenge
 ## 本目录为队伍”英国大力士”在KDD CUP 2024 PST 竞赛复赛第三名的解决方案介绍。
 
 本方案主要参考了"More Agents Is All You Need" (https://arxiv.org/abs/2402.05120) 的思路，利用大量不同的大语言模型（包括GPT4-turbo, GPT4o, Gemini pro 1.5, Claude 3 Opus）并设计多样性的prompt, 对结果的预测做整合，得到最终的答案。
-其最大的特点是，不需要本地训练深度学习模型，因此可能是前排中唯一不需要填写显存与模型参数量的解决方案。缺点是1. 为了输出答案需要耗费价值约500美金左右的Token费用。如果包括竞赛过程的一些无效尝试，总耗费金额可能接近1000美金。2.无法利用训练集标签提高让LLM能更加理解关键引用的准确定义。
+其最大的特点是，不需要本地训练深度学习模型，因此可能是前排中唯一不需要填写显存与模型参数量的解决方案。缺点是1. 为了输出答案需要耗费价值约500美金左右的Token费用。如果包括竞赛过程的一些无效尝试，总耗费金额可能更毒多。2.无法利用训练集标签提高让LLM能更加理解关键引用的准确定义。
 
 具体的做法非常简单，我们将每一篇论文的正文部分处理成只剩下文本和引用序号的部分。如"aaa bbb ccc[b1], ddd eee fff[b2] ..."。然后直接询问闭源模型，哪些引用可能是关键引用，并直接返回序号（b1, b2...）。
 
@@ -47,4 +47,10 @@ The top3 solution of KDD CUP 2024 PST challenge
 #### GPT4部分
 1. 运行get_GPT_res_level.ipynb, 填入自己的API_KEY，结果保存到gpt4_res_parse_train_level.json, gpt4_res_parse_valid_level.json, gpt4_res_parse_test_level.json.
 
-2. 运行
+2. 运行get_GPT_res_short.ipynb，填入自己的API_KEY，结果保存到gpt4_res_parse_train.json, gpt4_res_parse_valid.json, gpt4_res_parse_test_short.json.
+
+3. 运行get_gpt4_only_test_result.ipynb，填入自己的API_KEY，结果保存到gpt4_res_parse_test_only.json, gpt4_res_parse_test_only_V2.json, GPT4_res_test_note.json, get_prompt_gpt_detailed_test_V2.pkl, GPT4_res_train_V2_save.json, GPT4_res_test_V3_save.json.
+
+
+
+4. 
