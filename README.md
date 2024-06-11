@@ -36,15 +36,15 @@ The top3 solution of KDD CUP 2024 PST challenge
 1. 运行20240601_opus_1.ipynb，填入自己的API_KEY，结果保存到opus_res_parse_test.json;
 
 ##### GEMINI部分
-3. 运行Gemini_pro_test_1.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all.pkl;
-4. 
-5. 运行Gemini_pro_test_2.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round2.pkl;
-6. 
-7. 运行Gemini_pro_test_3.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round3.pkl;
-8. 
-9. 运行Gemini_pro_test_4.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round4.pkl;
+1. 运行Gemini_pro_test_1.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all.pkl;
+  
+2. 运行Gemini_pro_test_2.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round2.pkl;
+ 
+3. 运行Gemini_pro_test_3.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round3.pkl;
+ 
+4. 运行Gemini_pro_test_4.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round4.pkl;
 
 #### GPT4部分
-7. 运行get_GPT_res_level.ipynb, 填入自己的API_KEY，结果保存到gpt4_res_parse_train_level.json, gpt4_res_parse_valid_level.json, gpt4_res_parse_test_level.json.
-8. 
-9. 运行
+1. 运行get_GPT_res_level.ipynb, 填入自己的API_KEY，结果保存到gpt4_res_parse_train_level.json, gpt4_res_parse_valid_level.json, gpt4_res_parse_test_level.json.
+
+2. 运行
