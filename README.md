@@ -14,4 +14,12 @@ The top3 solution of KDD CUP 2024 PST challenge
 ### 一、运行feature_engineering.ipynb。
 这个脚本的功能是
 1. 处理paper，包括异常值填充和特征抽取，并将一些处理好的特征保存在processed_data_0601.pickle中。
-2. 导出Prompt。我们
+2. 导出prompt。我们设计如下几种不同的prompt:
+   2.1 给出关键引用的定义，让LLM直接给出关键引用的结果以及对应的置信度；
+   2.2 聚焦于"inspiration"这个典型的关键词，让LLM找出属于"direct inspiration"，"indirect inspiration", "other inspiration"的引用。
+   2.3 和2.1类似，但是会给出每个引用文章的标题。
+   2.4 和2.1类似，但是会先让GPT4自己优化一遍prompt.
+   2.5 对于数据集中包含“note”字段的文章，让LLM基于note的描述内容去寻找关键引用。
+最后将不同Prompt的结果保存。
+
+### 二、多次调用闭源API获取LLM给出的答案
