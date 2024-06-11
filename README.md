@@ -30,7 +30,21 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 ### 二、多次调用闭源API获取LLM给出的答案。
 
-#### Notes：1. 由于是自费参赛且经费有限，对于部分的LLM/PROMPT只刷了test数据集的部分。2.由于参赛过程比较仓促，导致文件名的命名比较随意。
+#### Notes：1. 由于是自费参赛且经费有限，对于部分的LLM的结果只刷了test数据集的部分。2.参赛过程比较仓促，导致这部分文件名的命名会比较随意。3. 我的Gemini Pro的API KEY很容易触发限额，因此代码实现上每调用一次需等待30s，并分成50个一组运行分批保存避免遇到错误。
 
-1. 运行20240601_opus_1.ipynb，填入自己的API_KEY，结果保存到20240528_opus_res_parse_test.json
-2. 
+##### OPUS部分
+1. 运行20240601_opus_1.ipynb，填入自己的API_KEY，结果保存到opus_res_parse_test.json;
+
+##### GEMINI部分
+3. 运行Gemini_pro_test_1.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all.pkl;
+4. 
+5. 运行Gemini_pro_test_2.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round2.pkl;
+6. 
+7. 运行Gemini_pro_test_3.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round3.pkl;
+8. 
+9. 运行Gemini_pro_test_4.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round4.pkl;
+
+#### GPT4部分
+7. 运行get_GPT_res_level.ipynb, 填入自己的API_KEY，结果保存到gpt4_res_parse_train_level.json, gpt4_res_parse_valid_level.json, gpt4_res_parse_test_level.json.
+8. 
+9. 运行
