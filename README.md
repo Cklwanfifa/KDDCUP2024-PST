@@ -49,8 +49,46 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 2. 运行get_GPT_res_short.ipynb，填入自己的API_KEY，结果保存到gpt4_res_parse_train.json, gpt4_res_parse_valid.json, gpt4_res_parse_test_short.json.
 
-3. 运行get_gpt4_only_test_result.ipynb，填入自己的API_KEY，结果保存到gpt4_res_parse_test_only.json, gpt4_res_parse_test_only_V2.json, GPT4_res_test_note.json, get_prompt_gpt_detailed_test_V2.pkl, GPT4_res_train_V2_save.json, GPT4_res_test_V3_save.json.
+3. 运行get_gpt4_only_test_result.ipynb，填入自己的API_KEY，结果保存到gpt4_res_parse_test_only.json, gpt4_res_parse_test_only_V2.json, GPT4_res_test_note.json, GPT4_res_train_V2_save.json, GPT4_res_test_V3_save.json.
+
+### 三、整合LLM模型结果
+由于很多情况下LLM输出的结果依然以文本形式存在，为了获得json格式的答案，我们还需要去解析并整合不同LLM模型的结果。
+
+运行parse_gpt_result.ipynb，在这个脚本中我们会
+
+1. 解析gpt4_res_parse_train_level.json，gpt4_res_parse_valid_level.json，gpt4_res_parse_test_level.json的结果，并保存到gpt4_res_parse_train_level_parsed.json, gpt4_res_parse_valid_level_parsed.json, gpt4_res_parse_test_level_parsed.json.
+
+2. 解析gpt4_res_parse_train.json, gpt4_res_parse_valid.json, gpt4_res_parse_test_short.json的结果，并保存到gpt4_res_parse_train_short_parsed.json, gpt4_res_parse_valid_short_parsed.json, gpt4_res_parse_test_short_parsed.json.
+
+3. 解析opus_res_parse_test.json的结果，这里需要调用GPT3.5。结果保存到opus_res_parse_json_test.json
+
+4. 解析gpt4_res_parse_test_only.json的结果，结果保存到gpt4_turbo_res_parse_json_test.json
+
+5. 解析gpt4_res_parse_test_only_V2.json的结果，这里需要调用GPT3.5。结果保存到gpt4_turbo_res_parse_json_test_v2.json
+
+6. 解析GPT4_res_test_note.json的结果，结果保存到GPT4_res_test_note_parse.json
+
+7. 解析gemini_test_result_all.pkl, gemini_test_result_all_round2.pkl, gemini_test_result_all_round3.pkl, gemini_test_result_all_round4.pkl的结果，并把结果保存到gemini_res_parse_json_test.json, gemini_res_parse_json_test_round2.json, gemini_res_parse_json_test_round3.json, gemini_res_parse_json_test_round4.json.
+
+8. 解析GPT4_res_test_V3_save.json，结果保存在GPT4_res_test_V3_parse.json。
+
+### 输出最后的结果
+
+运行feature_merge.ipynb
+
+1. 导入之前生成的文本特征和LLM预测的结果；
+   
+2. 在训练集训练Lightgbm和Catboost模型，输入为文本特征和部分在训练集有训练数据的LLM预测的结果，并在测试集上预测分数， 得到原始预测分数pred。
+   
+3. 让其他仅在测试集进行预测的LLM agent结果对结果进行修正”:
+   
+   3.1 加分步骤：将LLM agent进行分组(主要基于基座模型和prompt类型)，每一个组内对于结果进行投票，并加分到对应的pred分数上。
+   
+   3.2 扣分步骤：将所有LLM agent的结果放置在一起进行排序，对于每一个reference，如果其某个特定分位数的LLM的置信分数小于某个threshold，则进行扣分。
+   
+这样做的思路是，在我们之前的一些实验中，发现不同基座的LLM往往是站在在不同的角度对reference进行打分，因此可以基于各自的结果对pred进行投票加分。但同时，如果存在仅仅部分LLM agent给出了比较置信的分数的情况，可能说明这部分的LLM agent存在误判，这个时候需要参考集体的投票情况，进行扣分操作。这样的步骤可以被总结成”分组性加分，一致性扣分“.
+
+4. 导出最后的结果在sample_submission_0607_1.json。
 
 
 
-4. 
