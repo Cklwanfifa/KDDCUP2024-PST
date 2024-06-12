@@ -12,7 +12,19 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 为了方便复现，LLM agents产生的中间结果都包含在目录文件中。
 
+### 配置
+Python 3.9
+lightgbm 4.3.0
+catboost 1.2.5
+pandas 2.2.0
+numpy 1.26.4
+openai 1.30.1
+google-generativeai 0.6.0
+
 ## 主要步骤
+
+### 零、数据准备
+将全部的xml文件放在paper-xml文件夹中
 
 ### 一、运行feature_engineering.ipynb。
 这个脚本的功能是
