@@ -30,7 +30,7 @@ google-generativeai 0.6.0
 ## 主要步骤
 
 ### 零、数据准备
-将全部的xml文件放在paper-xml文件夹中
+将训练数据中全部的xml文件放在paper-xml文件夹中
 
 ### 一、运行feature_engineering.ipynb。
 这个脚本的功能是
