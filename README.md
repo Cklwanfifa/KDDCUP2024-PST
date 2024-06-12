@@ -35,7 +35,7 @@ The top3 solution of KDD CUP 2024 PST challenge
 ##### OPUS部分
 1. 运行20240601_opus_1.ipynb，填入自己的API_KEY，结果保存到opus_res_parse_test.json;
 
-##### GEMINI部分
+##### GEMINI部分2
 1. 运行Gemini_pro_test_1.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all.pkl;
   
 2. 运行Gemini_pro_test_2.ipynb，填入自己的API_KEY，结果保存在gemini_test_result_all_round2.pkl;
@@ -52,7 +52,7 @@ The top3 solution of KDD CUP 2024 PST challenge
 3. 运行get_gpt4_only_test_result.ipynb，填入自己的API_KEY，结果保存到gpt4_res_parse_test_only.json, gpt4_res_parse_test_only_V2.json, GPT4_res_test_note.json, GPT4_res_train_V2_save.json, GPT4_res_test_V3_save.json.
 
 ### 三、整合LLM模型结果
-由于很多情况下LLM输出的结果依然以文本形式存在，为了获得json格式的答案，我们还需要去解析并整合不同LLM模型的结果。
+由于很多情况下LLM agent输出的结果依然以字符串形式存在，为了获得特定格式的答案，我们还需要去解析并整合不同LLM agent的结果。
 
 #### Notes：1.原始提交数据依赖的LLM agent给出的答案已经附在目录中。
 
