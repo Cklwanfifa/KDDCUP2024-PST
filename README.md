@@ -14,11 +14,17 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 ### 配置
 Python 3.9
+
 lightgbm 4.3.0
+
 catboost 1.2.5
+
 pandas 2.2.0
+
 numpy 1.26.4
+
 openai 1.30.1
+
 google-generativeai 0.6.0
 
 ## 主要步骤
