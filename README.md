@@ -12,6 +12,8 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 为了方便复现，LLM agents产生的中间结果都包含在目录文件中。
 
+有问题请及时提issue或直接联系作者: 848893056@qq.com
+
 ### 配置
 Python 3.9
 
