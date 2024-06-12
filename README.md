@@ -24,7 +24,7 @@ The top3 solution of KDD CUP 2024 PST challenge
 
    2.4 和2.1类似，但是会先让GPT4自己优化一遍prompt.
 
-   2.5 对于数据集中包含“note”字段的文章，让LLM基于note的描述内容去寻找关键引用。
+   2.5 对于数据集中包含“notes”字段的文章，让LLM基于note的描述内容去寻找关键引用。
 
 最后将不同Prompt的结果保存。
 
