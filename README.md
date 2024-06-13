@@ -31,6 +31,12 @@ google-generativeai 0.6.0
 
 sklearn 1.4.0
 
+tqdm 4.66.4
+
+fuzzywuzzy 0.18.0
+
+bs4 4.12.2
+
 ## 主要步骤
 
 ### 零、数据准备
