@@ -29,6 +29,8 @@ openai 1.30.1
 
 google-generativeai 0.6.0
 
+sklearn 1.4.0
+
 ## 主要步骤
 
 ### 零、数据准备
