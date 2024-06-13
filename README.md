@@ -101,11 +101,12 @@ sklearn 1.4.0
 
 ### 输出最后的结果
 
+#### 训练 + 推理
 运行feature_merge.ipynb
 
 1. 导入之前生成的文本特征和LLM预测的结果；
    
-2. 在训练集训练Lightgbm和Catboost模型，输入为文本特征和部分在训练集有训练数据的LLM agent预测的结果，并在测试集上预测分数， 得到原始预测分数pred。
+2. 在训练集训练Lightgbm和Catboost模型，输入为文本特征和部分在训练集有训练数据的LLM agent预测的结果，并在测试集上预测分数， 得到原始预测分数pred。同时保存lightgbm和Catboost模型到lgb.pkl和catboost.pkl，与整理好的测试数据test_feat.csv.
    
 3. 让其他仅在测试集进行预测的LLM agent结果对结果进行修正”:
    
@@ -116,6 +117,14 @@ sklearn 1.4.0
 这样做的思路是，在我们之前的一些实验中，发现不同基座的LLM往往是站在在不同的角度对reference进行打分，因此可以基于各自的结果对pred进行投票加分。但同时，如果存在仅仅部分LLM agent给出了比较置信的分数的情况，可能说明这部分的LLM agent存在误判，这个时候需要参考集体的投票情况，进行扣分操作。这样的步骤可以被总结成”分组性加分，一致性扣分“.
 
 4. 导出最后的结果在sample_submission_0607_1.json。
+
+#### 仅推理
+
+运行direct_inference.ipynb
+
+读入保存的模型和测试数据，直接推理，结果保存在sample_submission_0607_1_only_inference.json
+
+
 
 
 
