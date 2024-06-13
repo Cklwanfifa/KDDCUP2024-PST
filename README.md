@@ -124,6 +124,8 @@ sklearn 1.4.0
 
 读入保存的模型和测试数据，直接推理，结果保存在sample_submission_0607_1_only_inference.json
 
+在本机的测试中，sample_submission_0607_1.json和sample_submission_0607_1_only_inference.json的结果一致
+
 
 
 
