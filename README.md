@@ -10,7 +10,7 @@ The top3 solution of KDD CUP 2024 PST challenge
 
 具体的做法非常简单，我们将每一篇论文的正文部分处理成只剩下文本和引用序号的部分。如"aaa bbb ccc[b1], ddd eee fff[b2] ..."。然后直接询问LLM agent，哪些引用可能是关键引用，并直接返回序号（b1, b2...）。
 
-为了方便复现，LLM agents产生的中间结果都包含在目录文件中。
+为了方便复现，LLM agents产生的中间结果以及数据预处理的中间结果、lgb和catboost的训练文件都包含在目录文件中，可以通过直接运行direct_inference.ipynb快速获得提交文件。
 
 有问题请及时提issue或直接联系作者: 848893056@qq.com
 
